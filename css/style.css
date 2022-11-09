@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shadow {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 45%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.container {
+    width: 900px;
+    height: 500px;
+    background-color: white;
+    display: flex;
+}
+.sidebar {
+    width: 300px;
+    height: 100%;
+    border-right: 2px #F3F3F3 solid;
+}
+.sidebar .search {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.sidebar .search input {
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #F3F3F3;
+    font-size: 14px;
+}
+.sidebar .search input:focus {
+    outline: none;
+}
+.sidebar .search i {
+    background-color: #2196f3;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+
+
+
+.sidebar .users {
+    display: flex;
+    flex-direction: column;
+}
+.sidebar .users hr{
+    background-color: #F3F3F3;
+    width: 70%;
+    height: 1.5px;
+    margin: 0 auto;
+    border: none;
+}
+.sidebar .users .user{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 0;
+}
+.sidebar .users .user.active {
+    background-color: #2196f3;
+    color: white;
+}
+.sidebar .users .user.active .content p,
+.sidebar .users .user.active span {
+    color: white;
+}
+.sidebar .users .user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.sidebar .users .user .content {
+    
+}
+.sidebar .users .user .content h4{
+    padding: 0;
+    margin: 0 0 5px 0;
+    font-size: 14px;
+}
+.sidebar .users .user .content p{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    width: 150px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    color: #777;
+}
+.sidebar .users .user span {
+    color: #777;
+    font-size: 12px;
+}
+
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+.chat .header {
+    padding: 20px;
+    background-color: #eee;
+    color: #777;
+    font-size: 14px;
+}
+.chat .header span {
+    font-weight: bold;
+    color: black;
+}
+.chat .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 10px;
+    padding: 20px;
+}
+.chat .content .date {
+    align-self: center;
+    color: #777;
+    font-size: 12px;
+}
+.chat .content .message {
+    padding: 10px;
+    background-color: #F3F3F3;
+    border-radius: 5px;
+    max-width: 60%;
+    font-size: 14px;
+    position: relative;
+}
+.chat .content .message::before {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-color: transparent transparent transparent #F3F3F3;
+    border-style: solid;
+    border-width: 5px 10px;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+}
+.chat .content .message.active {
+    background-color: #2196f3;
+    color: white;
+    align-self: flex-start;
+}
+.chat .content .message.active::before {
+    left: -20px;
+    border-color: transparent #2196f3 transparent transparent;
+}
+
+
+.chat .footer{
+    padding: 15px;
+}
+.chat .footer div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    background-color: #F3F3F3;
+    border: #eee 2px solid;
+    border-radius: 5px;
+
+}
+.chat .footer div input {
+    flex-grow: 1;
+    border: none;
+    height: 35px;
+    background-color: #F3F3F3;
+    font-size: 14px;
+}
+.chat .footer div input:focus {
+    outline: none;
+}
+.chat .footer div i {
+    color: rgb(155, 155, 155);
+    padding: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+.chat .footer div i:hover {
+    color: #2196f3;
+}
+
